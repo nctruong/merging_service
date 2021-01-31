@@ -5,7 +5,7 @@ class Hotel
                 :name,
                 :description
 
-  attr_accessor :amenities,
+  attr_accessor :amenity,
                 :images,
                 :booking_conditions
 

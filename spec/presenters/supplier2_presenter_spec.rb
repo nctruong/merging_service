@@ -46,5 +46,12 @@ describe Supplier2Presenter do
     end
   end
 
+  describe '#images' do
+    it 'returns exact images' do
+      expect(@hotel.images.rooms.first.link).to eq('https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/2.jpg')
+      expect(@hotel.images.rooms.first.description).to eq('Double room')
+    end
+  end
+
 end
 

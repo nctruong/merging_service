@@ -4,6 +4,13 @@ class Supplier1Presenter < BasePresenter
   property :name
   property :description
 
+  property :amenity, as: -> (p) {
+    amenity = Amenity.new
+    p[:represented].amenity = amenity
+    json = OpenStruct.new(p[:input])
+    amenity.general = json.facilities
+  }
+
   property :location, as: -> (p) {
     location = Location.new
     p[:represented].location = location

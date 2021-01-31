@@ -1,3 +1,3 @@
 class Amenity
-  attr_accessor :general, :in_room, :images
+  attr_accessor :general, :room, :images
 end

@@ -3,23 +3,23 @@ class Supplier1Presenter < BasePresenter
   property :destination_id
   property :name
   property :description
-
+  
   property :amenity, as: -> (p) {
-    amenity = Amenity.new
+    amenity                 = Amenity.new
     p[:represented].amenity = amenity
-    json = OpenStruct.new(p[:input])
-    amenity.general = json.facilities
+    json                    = OpenStruct.new(p[:input])
+    amenity.general         = json.facilities
   }
-
+  
   property :location, as: -> (p) {
-    location = Location.new
+    location                 = Location.new
     p[:represented].location = location
-    json = OpenStruct.new(p[:input])
-
-    location.lat = json.latitude
-    location.lng = json.longitude
+    json                     = OpenStruct.new(p[:input])
+    
+    location.lat     = json.latitude
+    location.lng     = json.longitude
     location.address = json.address
-    location.city = json.city
+    location.city    = json.city
     location.country = json.country
   }
 

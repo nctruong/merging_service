@@ -1,14 +1,14 @@
 module HotelProcurements
   class CollectAttribute < BaseService
     attr_reader :hotels, :hotel
-
-    def initialize(*hotels)
+    
+    def initialize(hotels)
       @hotels = hotels
-      @hotel = Hotel.new
-
+      @hotel  = Hotel.new
+      
       init_attribute_value
     end
-
+    
     def call
       hotels.each do |hotel|
         @hotel.name << hotel.name
@@ -18,18 +18,19 @@ module HotelProcurements
         @hotel.booking_conditions << hotel.booking_conditions
         @hotel.location << hotel.location
       end
+      
       hotel
     end
-
+    
     private
-
+    
     def init_attribute_value
-      @hotel.name = []
-      @hotel.description = []
-      @hotel.amenity = []
-      @hotel.images = []
+      @hotel.name               = []
+      @hotel.description        = []
+      @hotel.amenity            = []
+      @hotel.images             = []
       @hotel.booking_conditions = []
-      @hotel.location = []
+      @hotel.location           = []
     end
   end
 end

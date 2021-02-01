@@ -2,9 +2,9 @@ module HotelProcurements
   class MergeName < BaseService
     attr_reader :values, :engine
 
-    def initialize(values, **options)
+    def initialize(values)
       @values = values
-      @engine = options[:engine] || DataSelectionEngines::CollectUniqueData
+      @engine = DataSelectionEngines::CollectUniqueData
     end
 
     def call

@@ -1,22 +1,23 @@
 module DataSelectionEngines
   class CollectUniqueData < BaseService
-    attr_reader :values, :selected_values, :counter
-
+    attr_reader :values
+    
     def initialize(values)
-      @values = values
-      @selected_values = []
+      @values  = values
+      @result  = []
       @counter = {}
     end
-
+    
     def call
       values.each do |value|
-        next if counter[value]
-
-        @selected_values << value
-        @counter[value] = 1
+        next if @counter[value]
+        
+        @result << value
+        
+        block_given? ? @counter = yield(@counter, value) : @counter[value] = 1
       end
-
-      selected_values.compact
+      
+      @result.compact
     end
   end
 end

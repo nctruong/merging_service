@@ -4,7 +4,7 @@ module HotelProcurements
 
     def initialize(values, **options)
       @values = values
-      @engine = options[:engine] || DataSelectionEngines::CollectUniqueData
+      @engine = DataSelectionEngines::CollectUniqueData
     end
 
     def call

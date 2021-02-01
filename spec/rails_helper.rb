@@ -10,6 +10,7 @@ require 'byebug'
 require 'json'
 require 'roar/decorator'
 require 'roar/json'
+require 'awesome_print'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!

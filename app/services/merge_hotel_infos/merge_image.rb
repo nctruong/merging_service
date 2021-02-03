@@ -1,4 +1,4 @@
-module HotelProcurements
+module MergeHotelInfos
   class MergeImage < BaseService
     attr_reader :image_collection
     attr_reader :rooms, :site, :amenities

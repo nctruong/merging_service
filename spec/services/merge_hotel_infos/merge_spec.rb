@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe HotelProcurements::MergeInfo do
+describe MergeHotelInfos::Merge do
   let(:response1) { JSON.parse(File.read('spec/data/supplier1.json')) }
   let(:response2) { JSON.parse(File.read('spec/data/supplier2.json')) }
   let(:response3) { JSON.parse(File.read('spec/data/supplier3.json')) }
@@ -21,8 +21,8 @@ describe HotelProcurements::MergeInfo do
     Supplier3Presenter.new(hotel3).from_json(
       response3.first.transform_keys(&:underscore).to_json
     )
-    
-    HotelProcurements::MergeInfo.call([hotel1, hotel2, hotel3])
+
+    MergeHotelInfos::Merge.call([hotel1, hotel2, hotel3])
   }
   
   describe '.call' do

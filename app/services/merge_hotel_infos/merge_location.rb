@@ -1,4 +1,4 @@
-module HotelProcurements
+module MergeHotelInfos
   class MergeLocation < BaseService
     attr_reader :values
     

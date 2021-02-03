@@ -1,4 +1,4 @@
-module DataSelectionEngines
+module SelectionEngines
   class CollectUniqueData < BaseService
     attr_reader :values
     

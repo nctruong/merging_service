@@ -1,4 +1,4 @@
-module HotelProcurements
+module MergeHotelInfos
   class CollectAttribute < BaseService
     attr_reader :hotels, :hotel
     

@@ -1,5 +1,5 @@
-module HotelProcurements
-  class MergeInfo < BaseService
+module MergeHotelInfos
+  class Merge < BaseService
     attr_reader :hotels, :hotel
     
     def initialize(hotels)

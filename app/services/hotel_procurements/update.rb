@@ -9,6 +9,7 @@ module HotelProcurements
     
     def create_procurement
       Suppliers::HotelInfo.call do |supplier, hotel_json|
+        
         HotelProcurement.create(
           supplier:       supplier[:name],
           hotel_id:       hotel_json[:id],

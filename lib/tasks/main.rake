@@ -8,3 +8,8 @@ end
 task procure: :environment do
   HotelProcurements::Procure.call
 end
+
+task procure_hotel: :environment do
+  HotelProcurements::Update.call
+  HotelProcurements::Procure.call
+end

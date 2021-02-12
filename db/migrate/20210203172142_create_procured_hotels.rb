@@ -5,7 +5,7 @@ class CreateProcuredHotels < ActiveRecord::Migration[5.2]
       t.integer :destination_id
       t.json :data
       
-      t.index :hotel_id
+      t.index :hotel_id, unique: true
       t.index :destination_id
 
       t.timestamps

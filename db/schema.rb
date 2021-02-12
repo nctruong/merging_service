@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_172142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["destination_id"], name: "index_procured_hotels_on_destination_id"
-    t.index ["hotel_id"], name: "index_procured_hotels_on_hotel_id"
+    t.index ["hotel_id"], name: "index_procured_hotels_on_hotel_id", unique: true
   end
 
 end

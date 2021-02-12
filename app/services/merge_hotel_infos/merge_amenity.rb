@@ -10,7 +10,7 @@ module MergeHotelInfos
     def call
       general = []
       room    = []
-      values.each do |value|
+      values.compact.each do |value|
         general += value.general if value.general
         room    += value.room if value.room
       end
